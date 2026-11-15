@@ -18,9 +18,9 @@ void tuto() //Si le joueur ne connaît pas les règles, il peut accéder à un t
 void reset_tab(char tab[3][3]) //réinitialise les cases tout en affichant le numéro de chaque case
 {
 	int count = 0;
-	int i = 0;
+	int i;
 	int j;
-	for(i; i < 3; i++) // parcourt toutes les lignes
+	for(i = 0; i < 3; i++) // parcourt toutes les lignes
 	{
 		for(j = 0; j < 3; j++) // parcourt toutes les lignes
 		{	
