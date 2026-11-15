@@ -4,9 +4,38 @@
 
 int main()
 {
-	int ** tab = malloc(3 * sizeof(*tab ));
-	tab[2] = NULL;
+	char tab[3][3];
 	tuto();
-	emplacement();
+	reset_tab(tab);
+	while(1)
+	{
+		aff_tab(tab);
+		tour_joueur(tab);
+		if (joueur_win(tab))
+        {
+            aff_tab(tab);
+            printf("C'est gagné !\n");
+            return 1;
+        }
+		if(match_nul(tab))
+		{
+	        aff_tab(tab);
+            printf("Match nul !\n");
+            return 1;
+		}
+		tour_ordi(tab);
+		if(ordi_win(tab))
+		{
+			aff_tab(tab);
+            printf("Perdu ! Vous ferez mieux la prochaine fois !\n");
+            return 1;
+		}
+		if(match_nul(tab))
+		{
+			aff_tab(tab);
+            printf("Match nul !\n");
+            return 1;
+		}
+	}
 	return 0;
 }
